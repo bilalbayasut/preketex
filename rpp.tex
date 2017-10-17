@@ -1,7 +1,16 @@
 \documentclass{article}
 \usepackage[a4paper, margin=2.54cm]{geometry}
 \usepackage{graphicx}
+\usepackage{enumitem}
 \usepackage{float}
+\usepackage{array,etoolbox}
+\usepackage{booktabs}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\preto\tabular{\setcounter{magicrownumbers}{0}}
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
 \begin{document}
 
 \section{Penentuan Capaian Pembelajaran}
@@ -24,7 +33,6 @@
 \section{Penetapan kemampuan akhir yang direncakanan dan indikator}
 \begin{table}[H]
     \centering
-    \label{my-label}
     \begin{tabular}{lll}
     \hline
     \multicolumn{1}{|l|}{Mata kuliah}          & \multicolumn{1}{l|}{:} & \multicolumn{1}{l|}{Mobile Multimedia Solution}                                                                                                                                                   \\ \hline
@@ -32,4 +40,84 @@
                                                &                        &                                                                                                                                                                                                  
     \end{tabular}
     \end{table}
+
+
+    % \begin{center}
+    %     \begin{tabular}{ |l|l|l|l| } 
+    %      \hline
+    %      No & Kemampuan akhir yang direncanakan & Indikator & Materi\\
+    %      \hline
+    %      1 & cell5 & 
+    %      \begin{enumerate}
+    %         \item This is item 1
+    %         \item This is item 2
+    %      \end{enumerate} 
+    %      & materi \\ 
+
+    %      \hline
+    %     \end{tabular}
+    %     \end{center}
+
+    \begin{center}
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        No & \begin{minipage}{3in}Kemampuan akhir \\
+            yang direncanakan\end{minipage} & 
+            Indikator & Materi\\
+       \hline
+        1 & 
+        \begin{minipage}{3in}
+          \vskip 4pt
+          \begin{enumerate}
+         \item Mahasiswa mampu menjelaskan konsep dasar React Native
+         \item Mahasiswa mampu menjelaskan alasan kenapa menggunakan React Native
+         \end{enumerate}
+         \vskip 4pt
+       \end{minipage}
+       & test 
+       & test
+       \\
+        \hline
+       \end{tabular}
+    \end{center}
+
+    % \begin{table}[H]
+    %     \centering
+    %     \begin{tabular}{|l|l|l|l|}
+    %     \hline
+    %     No & \begin{tabular}[c]{@{}l@{}}Kemampuan akhir\\ yang direncanakan\end{tabular}                     & Indikator & Materi       \\ \hline
+    %     1  & 
+    %     \begin{tabular}[c]{@{}l@{}}
+    %     Mahasiswa dapat menjelaskan\\ konsep dasar React Native
+    %     \end{tabular} 
+    %     & Mahasiswa 
+    %     & Introduction \\ \hline
+    %        &                                                                                                 &           &              \\ \hline
+    %     \end{tabular}
+    %     \end{table}
+        
+
+% \begin{enumerate}
+            %     \label{indikator}
+            %     \item Topic
+            %     \begin{enumerate}[label*=\arabic*.]
+            %       \item First Subtopic
+            %       \item Second Subtopic
+            %     \end{enumerate}
+            %   \end{enumerate}
+
+            % \begin{tabular}{|p{0.4\textwidth}|p{.03\textwidth}|p{0.4\textwidth}|}
+            %     %%%
+            %     \begin{itemize}
+            %       \item Sample Text
+            %       \item Sample Text
+            %       \end{itemize}
+            %       & Hi &
+            %       \begin{itemize}
+            %       \item Sample Text
+            %       \item Sample Text
+            %     \end{itemize}
+            %     %%%
+                
+            %     \end{tabular}
 \end{document}
